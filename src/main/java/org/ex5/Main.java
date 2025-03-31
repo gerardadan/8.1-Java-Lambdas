@@ -6,10 +6,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        printList(Months.getMonths());
+        double v = 3.1415;
+        ArithmeticUtils arithmeticUtils = () -> v;
+
+        System.out.println(arithmeticUtils.getPiValue());
     }
 
-    public static void printList(List<String> list) {
-        list.forEach(System.out::println);
+    @FunctionalInterface
+    public interface ArithmeticUtils {
+        double getPiValue();
     }
 }
